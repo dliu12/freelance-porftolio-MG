@@ -7,6 +7,7 @@ html {
   padding: 0;
   text-align: center;
   scroll-behavior: smooth;
+  font-family: "Open Sans", sans-serif;
 }
 
 body {
@@ -44,6 +45,8 @@ body header #background {
 
 body header nav {
   z-index: 2;
+  font-family: "Podkova", serif;
+  font-size: 18px;
 }
 
 body header nav ul {
@@ -81,6 +84,10 @@ body header nav ul li a, body header nav ul li a:visited {
   text-decoration: none;
 }
 
+body header nav ul li a:hover {
+  font-weight: bold;
+}
+
 body header #greetings {
   height: 100%;
   display: -webkit-box;
@@ -97,6 +104,10 @@ body header #greetings {
       -ms-flex-align: center;
           align-items: center;
   color: #FFE8E2;
+  font-family: "Montserrat", sans-serif;
+  font-size: 35px;
+  -webkit-text-stroke: 2px;
+  -webkit-text-stroke-color: rgba(22, 106, 99, 0.75);
 }
 
 body header #greetings .greetingChild {
@@ -108,6 +119,7 @@ body header #greetings .greetingChild {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  font-weight: 800;
 }
 
 body #content {
@@ -140,7 +152,6 @@ body #content section ul {
 }
 
 body #content section .sectionTag {
-  border: 1px solid red;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -150,11 +161,78 @@ body #content section .sectionTag {
   border-radius: 0 0 15px 0;
   background-color: #216A61;
   color: #FBDA57;
+  font-family: "Podkova", serif;
+  font-size: 20px;
 }
 
 body #content #education .educationName {
-  border: 1px solid red;
   text-align: left;
-  padding-left: 15px;
+  padding: 15px 10px 15px 10px;
+}
+
+body #content #education .educationName p {
+  margin: 0;
+  padding: 0;
+}
+
+body #content #projects .projects-item {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 10px;
+}
+
+body #content #projects .projects-item .project-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+body #content #projects .projects-item .project-description {
+  text-align: left;
+  padding: 0 10px 0 10px;
+}
+
+footer {
+  margin: 0;
+  padding: 0;
+  background: url("reference/Sand2.jpg");
+  background-color: #AD9385;
+  background-blend-mode: multiply, normal;
+  background-repeat: repeat;
+  background-size: 25%;
+}
+
+footer #profile-link {
+  margin: 0;
+  padding: 0;
+  margin: 0 auto 0 auto;
+  border: 1px solid red;
+  width: 50%;
+  max-width: 500px;
+}
+
+footer #profile-link div {
+  border: 1px solid red;
+  padding: 10px 0 10px 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+footer #profile-link div li {
+  border: 1px solid red;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 /*# sourceMappingURL=styles.css.map */
