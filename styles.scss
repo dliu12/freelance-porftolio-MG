@@ -1,3 +1,4 @@
+// Definitions
 @mixin setMarPad {
     margin:0;
     padding:0;
@@ -8,9 +9,24 @@
 $borderTest: 1px solid red;
 $backgroundColor:#FFE8E2;
 $bodyFont:'Open Sans', sans-serif;
-$titleFont:'Montserrat', sans-serif;
+$titleFont:'Playfair Display', serif;
 $subtitleFont:'Podkova', serif;
+$breakpoint950:950px;
+$breakpoint750:750px;
+$breakpoint575:575px;
+$breakpoint475:475px;
+$breakpoint360:360px;
 
+@mixin titleCenter {
+    width:75%;
+    max-width:1000px;
+    @media(max-width:$breakpoint750){
+        width:100%;
+    }
+}
+
+
+// CSS
 ul{
  list-style-type: none;
 }
@@ -24,17 +40,19 @@ html{
 body{
     @include setMarPad();
     header{
-        // border:$borderTest;
         position:relative;
         width:100%;
         height:45vh;
         max-height:500px;
+        @media(max-width:$breakpoint475){
+            height:50vw;
+            min-height:200px;
+        }
         display:flex;
         flex-direction:column;
 
         //background div
         #background{
-            // border:$borderTest;
             position: absolute;
             width:100%;
             height:100%;
@@ -45,35 +63,42 @@ body{
             background-blend-mode: darken,multiply,normal;
             background-repeat: repeat;
             background-size: 50%,65%;
-            filter: blur(1px);
+            // filter: blur(1px);
         }
 
         //nav
         nav{
-            // border:$borderTest;
             z-index:2;
             font-family:$subtitleFont;
             font-size:18px;
 
             ul{
                 @include setMarPad();
-                @include center;
-                // border:$borderTest;
-                width:35%;
+                float:right;
+                width:25%;
+                @media (max-width:$breakpoint950){
+                   width:50%; 
+                }
+                @media (max-width:$breakpoint475){
+                    width:100%;
+                    background-color:rgba(22,43,41,1);
+                    font-size:16px;
+                }
 
                 display:flex;
                 flex-direction:row;
                 justify-content: space-evenly;
+
                 li{
-                    // border:$borderTest;
+                    border-bottom: 2px dotted #FFF7D7;
                     padding:5px;
                     width:fit-content;
                     height:fit-content;
                     border-radius:0 0 10px 10px;
+                    @media (max-width:$breakpoint475){
+                        border:none;
 
-                    //tag background
-                    background: linear-gradient(180deg, rgba(248, 189, 158, 0) 0%, #F8BD9E 100%);
-                    
+                    }
                     a,a:visited{
                         color:#FFF7D7;
                         text-decoration:none;
@@ -86,20 +111,44 @@ body{
         }
         //greetings
         #greetings{
-            // border:$borderTest;
+            @include center();
+            @include titleCenter();
             height:100%;
             display:flex;
             flex-direction:column;
             justify-content: center;
-            align-items:center;
+            align-items:left;
             color:#FFE8E2;
             font-family: $titleFont;
-            font-size:35px;
-            -webkit-text-stroke:2px;
-            -webkit-text-stroke-color:rgba(22,106,99,0.75);
+            font-size:30px;
 
+            @media(max-width:$breakpoint950){
+                font-size:25px;
+                h2{
+                    font-size:20px;
+                }
+            }
+            @media(max-width:$breakpoint750){
+                align-items:center;
+            }
+            @media(max-width:$breakpoint575){
+                font-size:20px;
+                h2{
+                    font-size:16px;
+                }
+            }
+            @media(max-width:$breakpoint360){
+                justify-content: start;
+                font-size:18px;
+                h2{
+                    font-size:14px;
+                }
+            }
+
+            h2{
+                font-size:25px;
+            }
             .greetingChild{
-                // border:$borderTest;
                 @include setMarPad();
                 width:fit-content;
                 height:fit-content;
@@ -109,7 +158,6 @@ body{
     }
 
     #content{
-        // border:$borderTest;
         position:relative;
 
         #contentBackground{
@@ -121,24 +169,25 @@ body{
             //background
             background-image: linear-gradient(180deg, rgba(248, 189, 158, 0.5) 0%, rgba(255, 247, 215, 0.25) 100%);
             opacity: 50%;
-            filter:blur(2px);
+            filter:blur(1px);
         }
 
         section{
-            // border:$borderTest;
             z-index:1;
-            width:75%;
-            max-width:1000px;
+            @include titleCenter();
             @include center();
 
             //section background
-            background:#FFE8E2;
+            background:rgba(255, 232, 226, 0.75);
+
+            @media (max-width:$breakpoint475){
+                font-size:14px;
+            }
 
             ul{
                 @include setMarPad();
                 }
             .sectionTag{
-                // border:$borderTest;
                 width:fit-content;
                 @include setMarPad();
                 padding:5px 15px 5px 15px;
@@ -147,6 +196,9 @@ body{
                 color:#FBDA57;
                 font-family:$subtitleFont;
                 font-size:20px;
+                @media (max-width:$breakpoint575){
+                        font-size:16px;
+                    }
                 }
         } // general section tag
 
@@ -165,12 +217,14 @@ body{
         #projects{
             .projects-item{
                 @include setMarPad();
-                // border:$borderTest;
                 padding-bottom:10px;
                 .project-title{
                     font-family: $titleFont;
                     font-weight: 700;
                     font-size:24px;
+                    @media (max-width:$breakpoint360){
+                        font-size:20px;
+                    }
                 }
                 .project-description{
                     text-align:left;
@@ -189,15 +243,18 @@ footer{
     background-blend-mode: multiply, normal;
     background-repeat: repeat;
     background-size:25%;
+    font-size:16px;
+    @media(max-width:$breakpoint475){
+        font-size:14px;
+    }
 
     #profile-link{
       @include setMarPad();  
       @include center();
-      border:$borderTest;
+      padding-top:5px;
       width:50%;
       max-width:500px;
       div{
-          border:$borderTest;
           padding:10px 0 10px 0;
           width:100%;
           display:flex;
@@ -206,8 +263,17 @@ footer{
           justify-content: space-evenly;
 
           li{
-              border:$borderTest;
               width:fit-content;
+              a,a:visited{
+                  text-decoration: none;
+                  color:black;
+              }
+              a:hover{
+                  font-weight:bold;
+                  border: 2px dotted $backgroundColor;
+                  border-radius: 5px;
+                  color:$backgroundColor;
+              }
           }
       }
     }
