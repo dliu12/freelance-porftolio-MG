@@ -25,12 +25,12 @@ $breakpoint360:360px;
     }
 }
 @mixin headerBackCross ($imgage1,$image2,$image3){
-    -webkit-background-image:$image1,$image2,$image3;
-    -webkit-background-blend-mode:darken,multiply,normal;
+    -webkit-background-image:$image3,$image1,$image2;
+    -webkit-mix-blend-mode:darken,multiply,normal;
     -webkit-background-repeat:repeat;
     
     background-image:$image1,$image2,$imag3;
-    background-blend-mode: darken,multiply,normal;
+    mix-blend-mode: darken,multiply,normal;
     background-repeat: repeat;
 }
 
