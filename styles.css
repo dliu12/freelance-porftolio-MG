@@ -48,6 +48,13 @@ body header #background {
   background-size: 50%,65%;
 }
 
+@media (max-width: 475px) {
+  body header #background {
+    background-repeat: repeat;
+    background-size: fit-content;
+  }
+}
+
 body header nav {
   z-index: 2;
   font-family: "Podkova", serif;
