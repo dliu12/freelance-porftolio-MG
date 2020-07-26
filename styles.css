@@ -32,8 +32,9 @@ body header {
 
 @media (max-width: 475px) {
   body header {
-    height: 50vw;
+    height: 100vh;
     min-height: 200px;
+    max-height: 750px;
   }
 }
 
@@ -42,8 +43,8 @@ body header #background {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background: url("reference/icey2.jpg"), url("reference/waterDrops3.jpg"), -webkit-gradient(linear, left top, left bottom, from(#152928), color-stop(55.73%, #0D8677), to(#FFD7CD));
-  background: url("reference/icey2.jpg"), url("reference/waterDrops3.jpg"), linear-gradient(180deg, #152928 0%, #0D8677 55.73%, #FFD7CD 100%);
+  background-image: url("reference/icey2.jpg"), url("reference/waterDrops3.jpg"), -webkit-gradient(linear, left top, left bottom, from(#152928), color-stop(55.73%, #0D8677), to(#FFD7CD));
+  background-image: url("reference/icey2.jpg"), url("reference/waterDrops3.jpg"), linear-gradient(180deg, #152928 0%, #0D8677 55.73%, #FFD7CD 100%);
   background-blend-mode: darken,multiply,normal;
   background-repeat: repeat;
   background-size: 50%,65%;
@@ -177,9 +178,6 @@ body header #greetings {
 
 @media (max-width: 360px) {
   body header #greetings {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
     font-size: 18px;
   }
   body header #greetings h2 {
